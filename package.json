@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@ringcentral/sdk": "^4.0.0",
+    "@ringcentral/subscriptions": "^4.0.0",
     "dotenv": "^8.2.0"
   }
 }

@@ -12,6 +12,10 @@ const rcsdk = new SDK({
     handleRateLimit: true
 })
 
+const subscriptions = new Subscriptions({
+    sdk: rcsdk
+});
+
 // the sdk will auto handle RC rate limit errors. this will log those in the console when they happen
 rcsdk.platform().on(rcsdk.platform().events.rateLimitError, () => {
     console.log("Hit rate limit...")
@@ -30,6 +34,19 @@ rcsdk.login({
 });
 
 async function main() {
+
+    var subscription = subscriptions.createSubscription();
+
+    subscription.on(subscription.events.notification, function (msg) {
+        console.log(msg, msg.body)
+    });
+
+    subscription
+        .setEventFilters(['/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS']) // a list of server-side events
+        .register()
+        .then(() => {
+            console.log("Subscription created")
+        })
 
     // pull list of phone numbers belonging to the logged in extensions
     let fromNumbers = await rcsdk.get('/restapi/v1.0/account/~/extension/~/phone-number', {
