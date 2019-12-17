@@ -26,7 +26,7 @@ rcsdk.login({
     console.log("Logged in successfully")
     main() // run main application
 }).catch(e => {
-    alert(e.message || 'Server cannot authorize user');
+    console.error("Issue logging in: ", e)
 });
 
 async function main() {
