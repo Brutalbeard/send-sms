@@ -1,5 +1,6 @@
 const dotenv = require('dotenv')
 const SDK = require('@ringcentral/sdk').SDK
+const Subscriptions = require('@ringcentral/subscriptions').Subscriptions
 
 // load environment file
 dotenv.config()
@@ -35,7 +36,7 @@ rcsdk.login({
 
 async function main() {
 
-    var subscription = subscriptions.createSubscription();
+    var subscription = subscriptions.createSubscription({ pollInterval: 100 });
 
     subscription.on(subscription.events.notification, function (msg) {
         console.log(msg, msg.body)
