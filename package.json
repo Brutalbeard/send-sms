@@ -1,0 +1,15 @@
+{
+  "name": "send-sms",
+  "version": "1.0.0",
+  "description": "This is used to pull phone numbers belonging to an extension, and send one SMS outbound using each.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Celoria john.celoria@ringcentral.com",
+  "license": "ISC",
+  "dependencies": {
+    "@ringcentral/sdk": "^4.0.0",
+    "dotenv": "^8.2.0"
+  }
+}
