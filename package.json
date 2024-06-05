@@ -9,7 +9,7 @@
   "author": "John Celoria john.celoria@ringcentral.com",
   "license": "ISC",
   "dependencies": {
-    "@ringcentral/subscriptions": "^4.7.4",
+    "@ringcentral/subscriptions": "^5.0.1",
     "@ringcentral/sdk": "^4.7.4",
     "dotenv": "^8.2.0"
   }
